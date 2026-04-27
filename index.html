@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GitHub Finder</title>
+	<link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="icon.jpg">
+</head>
+<body>
+
+
+<nav class="nav">
+    <h1 href="index.html">GitHub Finder</h1>
+    <button class="bookmark-btn">FAVORIS</button>
+</nav>
+
+
+	<!-- Welcome Section -->
+	<section id="welcome-section">
+		<h1>Trouvez des profils GitHub rapidement et facilement.</h1>
+	</section>
+
+
+
+	<!-- Loading Section -->
+	<section id="loading-section" style="display:none;">
+		<div class="loader"></div>
+		<p>Chargement...</p>
+	</section>
+
+
+
+	<!-- Error Section -->
+	<section id="error-section" style="display:none;">
+		<p class="error-message"></p>
+	</section>
+
+
+
+	<!-- Search & Results Section -->
+	<section id="results-section">
+		<form id="search-form">
+			<input type="text" id="search-input" placeholder="Rechercher un utilisateur GitHub..." required>
+			<button type="submit" id="search-btn">Search</button>
+		</form>
+		<div id="user-profile-container"></div>
+	</section>
+
+
+
+	<!-- Bookmarks Section -->
+	<section id="bookmarks-section">
+		<h2>Favoris</h2>
+		<div id="bookmarks-container"></div>
+	</section>
+
+
+</body>
+</html>
