@@ -12,31 +12,38 @@
   <body>
     <!-- ================= NAV ================= -->
     <nav class="nav">
-      <a href="index.html" style="text-decoration: none;">
-        <h1 style="color: aliceblue;">GitHub Finder</h1>
+      <a href="index.html" style="text-decoration: none">
+        <h1 style="color: aliceblue">GitHub Finder</h1>
       </a>
 
       <button class="btn">FAVORIS</button>
     </nav>
 
     <!-- ============== WELCOME ============== -->
-    <section id="welcome-section" style="width: 100%;">
-      <h2 style="text-align: center;">Trouvez des profils GitHub rapidement et facilement.</h2>
+    <section id="welcome-section" style="width: 100%">
+      <h2 style="text-align: center">
+        Trouvez des profils GitHub rapidement et facilement.
+      </h2>
     </section>
 
     <!-- ============== LOADING ============== -->
-    <section id="loading-section" style="width: 100%;">
+    <section id="loading-section" style="width: 100%">
       <div class="loader"></div>
-      <p style="text-align: center;">Chargement...</p>
+      <p style="text-align: center">Chargement...</p>
     </section>
 
     <!-- ============== ERROR ============== -->
-    <section id="error-section" style="width: 100%;">
-      <p class="error-message" style="color: red; text-align: center; font-size: larger;">Utilisateur non trouvé</p>
+    <section id="error-section" style="width: 100%">
+      <p
+        class="error-message"
+        style="color: red; text-align: center; font-size: larger"
+      >
+        Utilisateur non trouvé
+      </p>
     </section>
 
     <!-- ============== SEARCH ============== -->
-    <section id="results-section" style="width: 100%;">
+    <section id="results-section" style="width: 100%">
       <form id="search-form">
         <input
           type="text"
@@ -51,9 +58,111 @@
       <div id="user-profile-container"></div>
     </section>
 
+
+    <!-- ================= PROFILE ================= -->
+<section id="profile-section" style="width: 100%">
+
+    <div class="profile-card" >
+
+        <img
+            src="avatar2.png"
+            alt="User Avatar"
+            class="profile-avatar"
+        >
+
+        <div class="profile-info" >
+<div class="hero-profil"><h2 class="username">SVBRVR</h2>
+            <div style="text-align: right; align-items: center;">
+    <a href="#" class="profile-link" target="_blank">
+        Ajouter aux favoris
+    </a>
+    
+</div></div>
+            
+
+            <p class="bio">Senior Developer</p>
+
+            <div class="profile-stats">
+
+                <div>
+                    <strong>10</strong>
+                    <span>Repos</span>
+                </div>
+
+                <div>
+                    <strong>200K</strong>
+                    <span>Followers</span>
+                </div>
+
+                <div>
+                    <strong>50</strong>
+                    <span>Following</span>
+                </div>
+<br><br>
+                <a href="https://github.com/aiga-youcan/" class="view-profile-link" target="_blank"
+                style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; font-weight: bold; color: #007bff; text-decoration: none; ">
+                    View Profile GitHub
+                </a>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= REPOS ================= -->
+<section id="repos-section" style="width: 100%;">
+
+    <h2>Top Repositories</h2>
+
+    <div class="repos-container" >
+
+        <!-- Repo 1 -->
+<div class="repo-card">
+    <h3>Weather App</h3>
+    <p>Simple web app that shows current weather using an API.</p>
+    <span>⭐ 120</span>
+</div>
+
+<!-- Repo 2 -->
+<div class="repo-card">
+    <h3>Todo List</h3>
+    <p>Task manager where users can add, delete, and mark tasks as done.</p>
+    <span>⭐ 85</span>
+</div>
+
+<!-- Repo 3 -->
+<div class="repo-card">
+    <h3>Calculator</h3>
+    <p>Basic calculator built with HTML, CSS, and JavaScript.</p>
+    <span>⭐ 60</span>
+</div>
+
+<!-- Repo 4 -->
+<div class="repo-card">
+    <h3>Portfolio Website</h3>
+    <p>Personal portfolio to showcase projects and skills.</p>
+    <span>⭐ 40</span>
+</div>
+
+<!-- Repo 5 -->
+<div class="repo-card">
+    <h3>Login Form UI</h3>
+    <p>Responsive login and registration form design.</p>
+    <span>⭐ 25</span>
+</div>
+
+    </div>
+
+</section>
+
     <!-- ============== FAVORITES ============== -->
-    <section id="bookmarks-section" style="width: 100%;">
-      <h2 style="text-align: center;">Favoris</h2>
+    <section id="bookmarks-section" style="width: 100%">
+      <h2 style="text-align: center">Favoris</h2>
 
       <div id="bookmarks-container"></div>
     </section>
