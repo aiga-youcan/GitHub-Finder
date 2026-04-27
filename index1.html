@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GitHub Finder - Find GitHub Users</title>
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+    <!-- =========================
+     NAVBAR
+========================= -->
+    <nav>
+      <h1>GitHub Finder</h1>
+
+      <button class="btn">Bookmarks</button>
+    </nav>
+
+    <!-- =========================
+     WELCOME SECTION
+========================= -->
+    <section id="welcome-section">
+      <h2>Search GitHub Users</h2>
+
+      <!-- FORM -->
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Enter username..." />
+
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+    </section>
+
+    <!-- =========================
+     RESULTS SECTION
+========================= -->
+    <section id="results-section">
+      <h2>Results</h2>
+
+      <div id="user-profile-container">
+        <!-- Example Card -->
+        <div class="user-card">
+          <img src="avatar1.avif" alt="User Avatar" class="user-avatar" />
+
+          <div class="user-info">
+            <h3>Avatar 1</h3>
+
+            <p>welcome to the Github</p>
+
+            <button class="btn">Bookmark</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     BOOKMARKS SECTION
+========================= -->
+    <section id="bookmarks-section">
+      <h2>Bookmarks</h2>
+
+      <div id="bookmarks-container">
+        <!-- Bookmark Card -->
+        <div class="bookmark-card">
+          <img src="avatar2.png" alt="User Avatar" class="user-avatar" />
+
+          <div class="user-info">
+            <h3>Avatar 2</h3>
+
+            <button class="btn">Remove</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     LOADER
+========================= -->
+    <div class="loader"></div>
+
+    <!-- =========================
+     FOOTER
+========================= -->
+    <footer class="footer">
+      <p>© 2026 GitHub Finder. All rights reserved.</p>
+    </footer>
+    </main>
+  </body>
+</html>

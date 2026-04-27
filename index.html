@@ -1,63 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GitHub Finder</title>
-	<link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpg" href="icon.jpg">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Finder</title>
 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/jpg" href="icon.jpg" />
+  </head>
 
-<nav class="nav">
-    <h1 href="index.html">GitHub Finder</h1>
-    <button class="btn">FAVORIS</button>
-</nav>
+  <body>
+    <!-- ================= NAV ================= -->
+    <nav class="nav">
+      <a href="index.html" style="text-decoration: none;">
+        <h1 style="color: aliceblue;">GitHub Finder</h1>
+      </a>
 
+      <button class="btn">FAVORIS</button>
+    </nav>
 
-	<!-- Welcome Section -->
-	<section id="welcome-section">
-		<h1>Trouvez des profils GitHub rapidement et facilement.</h1>
-	</section>
-
-
-
-	<!-- Loading Section -->
-	<section id="loading-section" style="display:none;">
-		<div class="loader"></div>
-		<p>Chargement...</p>
-	</section>
-
-
-
-	<!-- Error Section -->
-	<section id="error-section" style="display:none;">
-		<p class="error-message"></p>
-	</section>
-
-
-
-	<!-- Search & Results Section -->
-	<section id="results-section">
-		<form id="search-form">
-			<input type="text" id="search-input" placeholder="Rechercher un utilisateur GitHub..." required>
-			<button type="submit" id="search-btn">Search</button>
-		</form>
-		<div id="user-profile-container"></div>
-	</section>
-
-
-
-	<!-- Bookmarks Section -->
-	<section id="bookmarks-section">
-		<h2>Favoris</h2>
-		<div id="bookmarks-container"></div>
-	</section>
-
-
-    <section class="footer">
-        <p class="footer">© 2024 GitHub Finder. Tous droits réservés.</p>
+    <!-- ============== WELCOME ============== -->
+    <section id="welcome-section" style="width: 100%;">
+      <h2 style="text-align: center;">Trouvez des profils GitHub rapidement et facilement.</h2>
     </section>
-</body>
+
+    <!-- ============== LOADING ============== -->
+    <section id="loading-section" style="width: 100%;">
+      <div class="loader"></div>
+      <p style="text-align: center;">Chargement...</p>
+    </section>
+
+    <!-- ============== ERROR ============== -->
+    <section id="error-section" style="width: 100%;">
+      <p class="error-message" style="color: red; text-align: center; font-size: larger;">Utilisateur non trouvé</p>
+    </section>
+
+    <!-- ============== SEARCH ============== -->
+    <section id="results-section" style="width: 100%;">
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Rechercher un utilisateur GitHub..."
+          required
+        />
+
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+
+      <div id="user-profile-container"></div>
+    </section>
+
+    <!-- ============== FAVORITES ============== -->
+    <section id="bookmarks-section" style="width: 100%;">
+      <h2 style="text-align: center;">Favoris</h2>
+
+      <div id="bookmarks-container"></div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+      <p>© 2026 GitHub Finder. Tous droits réservés.</p>
+    </footer>
+  </body>
 </html>
