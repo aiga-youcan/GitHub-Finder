@@ -313,3 +313,69 @@ nav {
         align-items: flex-start;
     }
 }
+
+
+/* =========================
+   11. favoris bookmark
+========================= */
+
+.bookmark-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #000000;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Avatar */
+.bookmark-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Username */
+.bookmark-username {
+    flex: 1;
+    margin: 0;
+}
+
+/* Actions */
+.bookmark-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Visit button */
+.visit-btn {
+    padding: 0.4rem 0.8rem;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.visit-btn:hover {
+    background: #0056b3;
+}
+
+/* Remove button */
+.remove-btn {
+    padding: 0.4rem 0.8rem;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #cc0000;
+}
+
+

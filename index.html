@@ -20,8 +20,8 @@
     </nav>
 
     <!-- ============== WELCOME ============== -->
-    <section id="welcome-section" style="width: 100%">
-      <h2 style="text-align: center">
+    <section id="welcome-section">
+      <h2 class="welcome-title">
         Trouvez des profils GitHub rapidement et facilement.
       </h2>
     </section>
@@ -58,114 +58,133 @@
       <div id="user-profile-container"></div>
     </section>
 
-
     <!-- ================= PROFILE ================= -->
-<section id="profile-section" style="width: 100%">
+    <section id="profile-section" style="width: 100%">
+      <div class="profile-card">
+        <img src="avatar2.png" alt="User Avatar" class="profile-avatar" />
 
-    <div class="profile-card" >
+        <div class="profile-info">
+          <div class="hero-profil">
+            <h2 class="username">SVBRVR</h2>
+            <div style="text-align: right; align-items: center">
+              <a href="#" class="profile-link" target="_blank">
+                Ajouter aux favoris
+              </a>
+            </div>
+          </div>
 
-        <img
-            src="avatar2.png"
-            alt="User Avatar"
-            class="profile-avatar"
-        >
+          <p class="bio">Senior Developer</p>
 
-        <div class="profile-info" >
-<div class="hero-profil"><h2 class="username">SVBRVR</h2>
-            <div style="text-align: right; align-items: center;">
-    <a href="#" class="profile-link" target="_blank">
-        Ajouter aux favoris
-    </a>
-    
-</div></div>
-            
-
-            <p class="bio">Senior Developer</p>
-
-            <div class="profile-stats">
-
-                <div>
-                    <strong>10</strong>
-                    <span>Repos</span>
-                </div>
-
-                <div>
-                    <strong>200K</strong>
-                    <span>Followers</span>
-                </div>
-
-                <div>
-                    <strong>50</strong>
-                    <span>Following</span>
-                </div>
-<br><br>
-                <a href="https://github.com/aiga-youcan/" class="view-profile-link" target="_blank"
-                style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; font-weight: bold; color: #007bff; text-decoration: none; ">
-                    View Profile GitHub
-                </a>
-
+          <div class="profile-stats">
+            <div>
+              <strong>10</strong>
+              <span>Repos</span>
             </div>
 
+            <div>
+              <strong>200K</strong>
+              <span>Followers</span>
+            </div>
 
+            <div>
+              <strong>50</strong>
+              <span>Following</span>
+            </div>
+            <br /><br />
+            <a
+              href="https://github.com/aiga-youcan/"
+              class="view-profile-link"
+              target="_blank"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 1rem;
+                font-weight: bold;
+                color: #007bff;
+                text-decoration: none;
+              "
+            >
+              View Profile GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= REPOS ================= -->
+    <section id="repos-section" style="width: 100%">
+      <h2>Top Repositories</h2>
+
+      <div class="repos-container">
+        <!-- Repo 1 -->
+        <div class="repo-card">
+          <h3>Weather App</h3>
+          <p>Simple web app that shows current weather using an API.</p>
+          <span>⭐ 120</span>
         </div>
 
-    </div>
+        <!-- Repo 2 -->
+        <div class="repo-card">
+          <h3>Todo List</h3>
+          <p>
+            Task manager where users can add, delete, and mark tasks as done.
+          </p>
+          <span>⭐ 85</span>
+        </div>
 
-</section>
+        <!-- Repo 3 -->
+        <div class="repo-card">
+          <h3>Calculator</h3>
+          <p>Basic calculator built with HTML, CSS, and JavaScript.</p>
+          <span>⭐ 60</span>
+        </div>
 
-<!-- ================= REPOS ================= -->
-<section id="repos-section" style="width: 100%;">
+        <!-- Repo 4 -->
+        <div class="repo-card">
+          <h3>Portfolio Website</h3>
+          <p>Personal portfolio to showcase projects and skills.</p>
+          <span>⭐ 40</span>
+        </div>
 
-    <h2>Top Repositories</h2>
-
-    <div class="repos-container" >
-
-        <!-- Repo 1 -->
-<div class="repo-card">
-    <h3>Weather App</h3>
-    <p>Simple web app that shows current weather using an API.</p>
-    <span>⭐ 120</span>
-</div>
-
-<!-- Repo 2 -->
-<div class="repo-card">
-    <h3>Todo List</h3>
-    <p>Task manager where users can add, delete, and mark tasks as done.</p>
-    <span>⭐ 85</span>
-</div>
-
-<!-- Repo 3 -->
-<div class="repo-card">
-    <h3>Calculator</h3>
-    <p>Basic calculator built with HTML, CSS, and JavaScript.</p>
-    <span>⭐ 60</span>
-</div>
-
-<!-- Repo 4 -->
-<div class="repo-card">
-    <h3>Portfolio Website</h3>
-    <p>Personal portfolio to showcase projects and skills.</p>
-    <span>⭐ 40</span>
-</div>
-
-<!-- Repo 5 -->
-<div class="repo-card">
-    <h3>Login Form UI</h3>
-    <p>Responsive login and registration form design.</p>
-    <span>⭐ 25</span>
-</div>
-
-    </div>
-
-</section>
-
-    <!-- ============== FAVORITES ============== -->
-    <section id="bookmarks-section" style="width: 100%">
-      <h2 style="text-align: center">Favoris</h2>
-
-      <div id="bookmarks-container"></div>
+        <!-- Repo 5 -->
+        <div class="repo-card">
+          <h3>Login Form UI</h3>
+          <p>Responsive login and registration form design.</p>
+          <span>⭐ 25</span>
+        </div>
+      </div>
     </section>
+
+    <!-- ================= FAVORIS ================= -->
+    <section id="bookmarks-section" style="width: 100%">
+      <h2>Favoris</h2>
+
+      <div id="bookmarks-container">
+        <!-- Favori Card -->
+        <div class="bookmark-card">
+          <!-- Avatar -->
+          <img src="avatar2.png" alt="User Avatar" class="bookmark-avatar" />
+
+          <!-- Username -->
+          <h3 class="bookmark-username">SVBRVR</h3>
+
+          <!-- Buttons -->
+          <div class="bookmark-actions">
+            <a
+              href="https://github.com/aiga-youcan/"
+              target="_blank"
+              class="visit-btn"
+            >
+              Visit GitHub
+            </a>
+
+            <button class="remove-btn">Remove</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br /><br /><br />
 
     <!-- ============== FOOTER ============== -->
     <footer class="footer">
