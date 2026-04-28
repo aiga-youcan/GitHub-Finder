@@ -8,187 +8,232 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/jpg" href="icon.jpg" />
   </head>
-
   <body>
-    <!-- ================= NAV ================= -->
-    <nav class="nav">
-      <a href="index.html" style="text-decoration: none">
-        <h1 style="color: aliceblue">GitHub Finder</h1>
-      </a>
-
-      <button class="btn">FAVORIS</button>
+    <nav class="navbar">
+      <a class="logo" href="index.html" style="text-decoration: none"
+        >GitHub Finder</a
+      >
+      <button id="nav-bookmarks-btn" class="btn-outline" style="color: white">
+        Favoris (<span id="bookmarks-count">0</span>)
+      </button>
     </nav>
 
-    <!-- ============== WELCOME ============== -->
-    <section id="welcome-section">
-      <h2 class="welcome-title">
-        Trouvez des profils GitHub rapidement et facilement.
-      </h2>
-    </section>
-
-    <!-- ============== LOADING ============== -->
-    <section id="loading-section" style="width: 100%">
-      <div class="loader"></div>
-      <p style="text-align: center">Chargement...</p>
-    </section>
-
-    <!-- ============== ERROR ============== -->
-    <section id="error-section" style="width: 100%">
-      <p
-        class="error-message"
-        style="color: red; text-align: center; font-size: larger"
-      >
-        Utilisateur non trouvé
-      </p>
-    </section>
-
-    <!-- ============== SEARCH ============== -->
-    <section id="results-section" style="width: 100%">
-      <form id="search-form">
+    <main class="container">
+      <div class="search-box">
         <input
           type="text"
           id="search-input"
-          placeholder="Rechercher un utilisateur GitHub..."
-          required
+          placeholder="Entrez un pseudo GitHub (ex: octocat)..."
         />
-
-        <button type="submit" id="search-btn">Search</button>
-      </form>
-
-      <div id="user-profile-container"></div>
-    </section>
-
-    <!-- ================= PROFILE ================= -->
-    <section id="profile-section" style="width: 100%">
-      <div class="profile-card">
-        <img src="avatar2.png" alt="User Avatar" class="profile-avatar" />
-
-        <div class="profile-info">
-          <div class="hero-profil">
-            <h2 class="username">SVBRVR</h2>
-            <div style="text-align: right; align-items: center">
-              <a href="#" class="profile-link" target="_blank">
-                Ajouter aux favoris
-              </a>
-            </div>
-          </div>
-
-          <p class="bio">Senior Developer</p>
-
-          <div class="profile-stats">
-            <div>
-              <strong>10</strong>
-              <span>Repos</span>
-            </div>
-
-            <div>
-              <strong>200K</strong>
-              <span>Followers</span>
-            </div>
-
-            <div>
-              <strong>50</strong>
-              <span>Following</span>
-            </div>
-            <br /><br />
-            <a
-              href="https://github.com/aiga-youcan/"
-              class="view-profile-link"
-              target="_blank"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 1rem;
-                font-weight: bold;
-                color: #007bff;
-                text-decoration: none;
-              "
-            >
-              View Profile GitHub
-            </a>
-          </div>
-        </div>
+        <button id="search-btn" class="btn-primary">Rechercher</button>
       </div>
-    </section>
 
-    <!-- ================= REPOS ================= -->
-    <section id="repos-section" style="width: 100%">
-      <h2>Top Repositories</h2>
+      <section id="welcome-section" class="section">
+        <h2>Bienvenue sur GitHub-Finder 👋</h2>
+        <p>
+          Utilisez la barre de recherche ci-dessus pour trouver le profil d'un
+          développeur GitHub et voir ses derniers projets.
+        </p>
+      </section>
 
-      <div class="repos-container">
-        <!-- Repo 1 -->
-        <div class="repo-card">
-          <h3>Weather App</h3>
-          <p>Simple web app that shows current weather using an API.</p>
-          <span>⭐ 120</span>
+      <section id="loading-section" class="section hidden">
+        <div class="loader"></div>
+        <p>Recherche en cours...</p>
+      </section>
+
+      <section id="error-section" class="section hidden">
+        <h2 class="error-text">Utilisateur non trouvé</h2>
+        <p>Vérifiez l'orthographe du nom d'utilisateur et réessayez.</p>
+      </section>
+
+      <section id="results-section" class="section hidden">
+        <div id="profile-container" class="card"></div>
+
+        <h3 class="repos-title">5 derniers repositories :</h3>
+        <div id="repos-container" class="repos-list"></div>
+      </section>
+
+      <section id="bookmarks-section" class="section hidden">
+        <h2>Vos Favoris ⭐</h2>
+        <div id="bookmarks-container" class="bookmarks-list"></div>
+      </section>
+
+      <h2
+        style="
+          display: flex;
+          justify-content: center;
+          padding: 20px;
+          margin: 20px;
+        "
+      >
+        Profil
+      </h2>
+
+      <div
+        class="profiltutti"
+        style="
+          background-color: rgb(11, 27, 43);
+          padding: 20px;
+          border-radius: 10px;
+          color: rgb(255, 255, 255);
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <div class="profile-header">
+          <img src="avatar2.png" alt="Avatar" class="profile-avatar" />
+          <div>
+            <h2>sabrar</h2>
+            <p>@Sabrar</p>
+          </div>
         </div>
+        <p>Aucune biographie disponible.</p>
+        <div class="profile-stats" style="color: rgb(119, 116, 116)">
+          <span><strong>10</strong> Abonnés</span>
+          <span><strong>5</strong> Abonnements</span>
+          <span><strong>15</strong> Repos</span>
+        </div>
+        <a
+          href="https://github.com/Aiga-youcan"
+          target="_blank"
+          class="profile-link"
+          >Voir sur GitHub
+        </a>
+      </div>
 
-        <!-- Repo 2 -->
-        <div class="repo-card">
-          <h3>Todo List</h3>
-          <p>
-            Task manager where users can add, delete, and mark tasks as done.
+      <h2
+        style="
+          display: flex;
+          justify-content: center;
+          padding: 20px;
+          margin: 20px;
+        "
+      >
+        5 derniers repositories
+      </h2>
+      <div
+        class="repo-card"
+        style="
+          background-color: rgb(11, 27, 43);
+          color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 10px;
+        "
+      >
+        <div>
+          <strong>mini-wiki</strong>
+          <p style="font-size: 0.9em; color: rgb(119, 116, 116)">
+            Un petit wiki pour documenter mes projets.
           </p>
-          <span>⭐ 85</span>
         </div>
-
-        <!-- Repo 3 -->
-        <div class="repo-card">
-          <h3>Calculator</h3>
-          <p>Basic calculator built with HTML, CSS, and JavaScript.</p>
-          <span>⭐ 60</span>
-        </div>
-
-        <!-- Repo 4 -->
-        <div class="repo-card">
-          <h3>Portfolio Website</h3>
-          <p>Personal portfolio to showcase projects and skills.</p>
-          <span>⭐ 40</span>
-        </div>
-
-        <!-- Repo 5 -->
-        <div class="repo-card">
-          <h3>Login Form UI</h3>
-          <p>Responsive login and registration form design.</p>
-          <span>⭐ 25</span>
-        </div>
+        <a
+          href="https://github.com/Aiga-youcan/mini-wiki"
+          target="_blank"
+          class="btn-outline"
+          style="text-decoration: none; color: aliceblue"
+          >View Code</a
+        >
       </div>
-    </section>
 
-    <!-- ================= FAVORIS ================= -->
-    <section id="bookmarks-section" style="width: 100%">
-      <h2>Favoris</h2>
-
-      <div id="bookmarks-container">
-        <!-- Favori Card -->
-        <div class="bookmark-card">
-          <!-- Avatar -->
-          <img src="avatar2.png" alt="User Avatar" class="bookmark-avatar" />
-
-          <!-- Username -->
-          <h3 class="bookmark-username">SVBRVR</h3>
-
-          <!-- Buttons -->
-          <div class="bookmark-actions">
-            <a
-              href="https://github.com/aiga-youcan/"
-              target="_blank"
-              class="visit-btn"
-            >
-              Visit GitHub
-            </a>
-
-            <button class="remove-btn">Remove</button>
-          </div>
+      <div
+        class="repo-card"
+        style="
+          background-color: rgb(11, 27, 43);
+          color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 10px;
+        "
+      >
+        <div>
+          <strong>edu-wiki</strong>
+          <p style="font-size: 0.9em; color: rgb(119, 116, 116)">
+            Un petit wiki pour documenter mes projets.
+          </p>
         </div>
+        <a
+          href="https://github.com/Aiga-youcan/edu-wiki"
+          target="_blank"
+          class="btn-outline"
+          style="text-decoration: none; color: aliceblue"
+          >View Code</a
+        >
       </div>
-    </section>
-    <br /><br /><br />
 
-    <!-- ============== FOOTER ============== -->
-    <footer class="footer">
-      <p>© 2026 GitHub Finder. Tous droits réservés.</p>
-    </footer>
+      <div
+        class="repo-card"
+        style="
+          background-color: rgb(11, 27, 43);
+          color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 10px;
+        "
+      >
+        <div>
+          <strong>cinevia</strong>
+          <p style="font-size: 0.9em; color: rgb(119, 116, 116)">
+            Un petit wiki pour documenter mes projets.
+          </p>
+        </div>
+        <a
+          href="https://github.com/Aiga-youcan/cinevia"
+          target="_blank"
+          class="btn-outline"
+          style="text-decoration: none; color: aliceblue"
+          >View Code</a
+        >
+      </div>
+
+      <div
+        class="repo-card"
+        style="
+          background-color: rgb(11, 27, 43);
+          color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 10px;
+        "
+      >
+        <div>
+          <strong>zayfbs</strong>
+          <p style="font-size: 0.9em; color: rgb(119, 116, 116)">
+            Un petit wiki pour documenter mes projets.
+          </p>
+        </div>
+        <a
+          href="https://github.com/Aiga-youcan/zayfbs"
+          target="_blank"
+          class="btn-outline"
+          style="text-decoration: none; color: aliceblue"
+          >View Code</a
+        >
+      </div>
+
+      <div
+        class="repo-card"
+        style="
+          background-color: rgb(11, 27, 43);
+          color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 10px;
+        "
+      >
+        <div>
+          <strong>safemind</strong>
+          <p style="font-size: 0.9em; color: rgb(119, 116, 116)">
+            Un petit wiki pour documenter mes projets.
+          </p>
+        </div>
+        <a
+          href="https://github.com/Aiga-youcan/safemind"
+          target="_blank"
+          class="btn-outline"
+          style="text-decoration: none; color: aliceblue"
+          >View Code</a
+        >
+      </div>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
