@@ -3,9 +3,9 @@
 // ==========================================
 // Cet objet stocke les données importantes de notre application.
 const state = {
-    currentUser: null, // Infos du profil recherché
-    currentRepos: [], // Les 5 derniers repos du profil
-    bookmarks: [], // La liste des favoris
+    currentUser: null,       // Infos du profil recherché
+    currentRepos: [],        // Les 5 derniers repos du profil
+    bookmarks: [],           // La liste des favoris
     isViewingBookmarks: false // Sommes-nous sur la page des favoris ?
 };
 
@@ -167,3 +167,93 @@ function displayUser() {
     sectionLoading.classList.add('hidden');
     sectionResults.classList.remove('hidden');
 }
+
+// Fonction pour ajouter un favori
+function addBookmark(user) {
+    // On sauvegarde un mini-objet pour le localStorage
+    const bookmarkData = {
+        login: user.login,
+        avatar_url: user.avatar_url,
+        name: user.name || user.login
+    };
+
+    state.bookmarks.push(bookmarkData);
+    updateBookmarks();
+    displayUser(); // On rafraîchit le profil pour changer le bouton
+}
+
+// Fonction pour retirer un favori
+function removeBookmark(login) {
+    // On filtre le tableau pour garder tout le monde SAUF celui qu'on retire
+    state.bookmarks = state.bookmarks.filter(b => b.login !== login);
+    updateBookmarks();
+    
+    // Si on était en train de regarder ce profil, on rafraîchit son bouton
+    if (!state.isViewingBookmarks && state.currentUser && state.currentUser.login === login) {
+        displayUser();
+    } else if (state.isViewingBookmarks) {
+        // Si on était sur la page favoris, on rafraîchit la liste
+        displayBookmarks();
+    }
+}
+
+// Fonction utilitaire pour sauvegarder et mettre à jour le compteur
+function updateBookmarks() {
+    localStorage.setItem('devfinder_bookmarks', JSON.stringify(state.bookmarks));
+    bookmarksCount.innerHTML = state.bookmarks.length;
+}
+
+// Fonction pour afficher la page des favoris
+function displayBookmarks() {
+    state.isViewingBookmarks = true;
+    
+    // Cacher toutes les autres sections
+    sectionWelcome.classList.add('hidden');
+    sectionLoading.classList.add('hidden');
+    sectionError.classList.add('hidden');
+    sectionResults.classList.add('hidden');
+    
+    // Afficher la section favoris
+    sectionBookmarks.classList.remove('hidden');
+
+    if (state.bookmarks.length === 0) {
+        bookmarksContainer.innerHTML = '<p>Vous n\'avez aucun favori pour le moment.</p>';
+        return;
+    }
+
+    bookmarksContainer.innerHTML = '';
+    
+    state.bookmarks.forEach(bookmark => {
+        // Création de l'élément div au lieu de += innerHTML pour pouvoir ajouter un événement onclick facilement
+        const div = document.createElement('div');
+        div.className = 'bookmark-card';
+        div.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="${bookmark.avatar_url}" alt="Avatar">
+                <strong>${bookmark.name}</strong>
+            </div>
+            <button class="btn-outline btn-remove-fav">Retirer</button>
+        `;
+
+        // Si on clique sur la carte (sauf sur le bouton retirer), ça lance la recherche
+        div.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('btn-remove-fav')) {
+                searchInput.value = bookmark.login;
+                searchUser(bookmark.login);
+            }
+        });
+
+        // Si on clique sur le bouton retirer
+        const removeBtn = div.querySelector('.btn-remove-fav');
+        removeBtn.addEventListener('click', () => {
+            removeBookmark(bookmark.login);
+        });
+
+        bookmarksContainer.appendChild(div);
+    });
+}
+
+// ==========================================
+// LANCEMENT DE L'APPLICATION
+// ==========================================
+init();
